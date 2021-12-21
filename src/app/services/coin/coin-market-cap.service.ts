@@ -11,6 +11,11 @@ export class CoinMarketCapService {
 
 
 
+  getQuotes() {
+    return this.reqHttp.getRequest('CoinMarketCap/quotes');
+  }
+
+
 
 
 }

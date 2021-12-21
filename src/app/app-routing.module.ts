@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'cryptos',
     loadChildren: () => import('./views/views.module').then((m) => m.ViewsModule),
   },
 ];

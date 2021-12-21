@@ -1,13 +1,15 @@
-<div class="row ">
-  <div class="col-md-4 img_center ">
-    <img class="img-fluid rounded-start "src="../../../assets/logo.png" alt="">
-  </div>
-  <div class="col-md-8 bg-primary">
-    <div class="card-body float-end text-white">
-      <div class="text-center">
-        <h5 class="card-title p-0 m-0">{{ title }}</h5>
-        <p class="card-text p-0 m-0">{{ currency | currency }}</p>
+
+  <div class="row">
+    <div class="col-md-5 img_center ">
+      <img class="img-fluid rounded-start "src="../../../assets/logo.png" alt="">
+    </div>
+    <div class="col-md-7 bg-primary p-0 m-0">
+      <div class="card-body float-end text-white h-100">
+        <div class="text-center p-0 m-0">
+          <h5 class="card-title p-0 m-0">{{ title }} <small *ngIf="sub_title">({{sub_title}})</small></h5>
+          <p class="card-text p-0 m-0">{{ currency | currency }}</p>
+          <!-- <p class="card-text"><small>BNB</small></p> -->
+        </div>
       </div>
     </div>
   </div>
-</div>
