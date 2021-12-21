@@ -1,3 +1,22 @@
-<p>quotes works!</p>
-<h1> Hola Mundo</h1>
-<button class="btn btn-danger">Hola</button>
+<div class="container">
+  <div class="col-md-12 d-flex justify-content-center">
+    <div class="alert alert-primary w-75 text-center" role="alert">
+      <h3>Consultar Crypto Monedas</h3>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-between">
+
+    <div class="card m-1 mb-3 col-md-3 col-sm-4 shadow-lg zoom" role="button" *ngFor=" let i of [1,2,3,4,5]" style="max-width: 25%;">
+      <app-cards
+        [title]="'Bitcoin'"
+        [currency]="48250">
+      </app-cards>
+    </div>
+
+  </div>
+
+  <button class="btn btn-danger">Hola</button>
+</div>
+
+
