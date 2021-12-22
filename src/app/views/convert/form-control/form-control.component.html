@@ -1,0 +1,30 @@
+<form [formGroup]="this.formGroup" (keyup.enter)="Convert()" autocomplete="off">
+  <div class="col-md-3 col-sm-12">
+    <label for="">Símbolo de Crypto: </label>
+    <div class="input-group mb-1">
+      <input type="string" class="form-control" formControlName="symbol" name="symbol"
+        placeholder="Crypto a Convertir">
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-12">
+    <label for="">Símbolos de Crytos a Convertir: </label>
+    <div class="input-group mb-1">
+      <input type="string" class="form-control" formControlName="convert" name="amount"
+        placeholder="Ejemplo ada,bnb,eth,usdt">
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-12">
+    <label for="">Cantidad: </label>
+    <div class="input-group mb-1">
+      <input type="number" class="form-control" formControlName="amount" name="amount"
+        placeholder="Cantidad a Convertir">
+      <button
+      class="btn btn-outline-secondary"
+      type="button"
+      id="button-addon2"
+      (click)="Convert()">Convertir</button>
+    </div>
+  </div>
+</form>
