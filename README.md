@@ -9,15 +9,16 @@ Frond End: https://github.com/Santiago503/AngularCoinMarketCap
 
 
 ## Instrucciones 
-  1-Bajar los dos Repositorios BackEnd y FrondEnd.
-  2-Entrar a la carpeta y correr el comando npm install.
-  3-Dentro de la carpeta correr el comando ng serve.
-  4-Ejecutar el Api Rest que esta en el otro repo.
-  
-  nota: Antes de empezar a usar asegurarse que el Api Rest en C# se este ejecutando.
+- 1-Bajar los dos Repositorios BackEnd y FrondEnd.
+- 2-Entrar a la carpeta y correr el comando npm install.
+- 3-Dentro de la carpeta correr el comando ng serve.
+- 4-Ejecutar el Api Rest que esta en el otro repo.
+
+- nota: Antes de empezar a usar asegurarse que el Api Rest en C# se este ejecutando.
 
 
 ## Estructura del codigo
+```
 dist/                        web app production build
 e2e/                         end-to-end tests
 src/                         project source code
@@ -37,9 +38,7 @@ src/                         project source code
 |- main.scss                 global style entry point
 |- main.ts                   app entry point
 |- polyfills.ts              polyfills needed by Angular
-+- test.ts                   unit tests entry point
-proxy.conf.js                backend proxy configuration
-    
+```
 #### Librarias
 
 - [Angular](https://angular.io)
