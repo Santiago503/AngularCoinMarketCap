@@ -9,10 +9,10 @@ Frond End: https://github.com/Santiago503/AngularCoinMarketCap
 
 
 ## Instrucciones 
-- 1-Bajar los dos Repositorios BackEnd y FrondEnd.
-- 2-Entrar a la carpeta y correr el comando npm install.
-- 3-Dentro de la carpeta correr el comando ng serve.
-- 4-Ejecutar el Api Rest que esta en el otro repo.
+- 1- Bajar los dos Repositorios BackEnd y FrondEnd.
+- 2- Entrar a la carpeta y correr el comando npm install.
+- 3- Dentro de la carpeta correr el comando ng serve.
+- 4- Ejecutar el Api Rest que esta en el otro repo.
 
 - nota: Antes de empezar a usar asegurarse que el Api Rest en C# se este ejecutando.
 
@@ -33,16 +33,12 @@ src/                         project source code
 |  |- app-routing.module.ts  app routes
 |- assets/                   app assets (images, fonts, sounds...)
 |- environments/             values for various build environments
-|- theme/                    app global scss variables and theme
 |- index.html                html entry point
-|- main.scss                 global style entry point
-|- main.ts                   app entry point
-|- polyfills.ts              polyfills needed by Angular
 ```
 #### Librarias
 
 - [Angular](https://angular.io)
 - [Bootstrap 5](https://getbootstrap.com)
-- [ngx-toastr]
+- [ngx-toastr](https://www.npmjs.com/package/ngx-toastr)
 
 
