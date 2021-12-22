@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardsComponent } from './components/cards/cards.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
+const component = [CardsComponent, LoadingSpinnerComponent];
 
 @NgModule({
-  declarations: [CardsComponent],
+  declarations: component,
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
   ],
-  exports: [
-    CardsComponent
-  ]
+  exports: component
 })
 export class ComponentsModule { }

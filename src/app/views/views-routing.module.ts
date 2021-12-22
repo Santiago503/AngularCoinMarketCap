@@ -10,7 +10,7 @@ const routes: Routes = [
     component: QuotesComponent,
   },
   {
-    path: 'convert/:symbol/:toConvert',
+    path: 'convert/:symbol/:toConvert/:amount',
     component: ConvertComponent,
   },
 ];

@@ -41,7 +41,6 @@ export class QuotesComponent implements OnInit {
       .subscribe(
         (resp: CryptoCoin) => {
           this.quotes = Object.values(resp.data);
-          console.log('~ resp', Object.values(resp.data));
         },
         (error) => {
           this.alertServ.toartError(
@@ -90,11 +89,11 @@ export class QuotesComponent implements OnInit {
         ParamResiduary += element.symbol + ',';
       }
     });
+
     ParamResiduary = ParamResiduary.substring(0, ParamResiduary.length - 1);
-    console.log(ParamResiduary);
 
     this.route.navigateByUrl(
-      `cryptos/convert/${coin.symbol.toLocaleLowerCase()}/${ParamResiduary.toLocaleLowerCase()}`
+      `cryptos/convert/${coin.symbol.toLocaleLowerCase()}/${ParamResiduary.toLocaleLowerCase()}/1`
     );
   }
 }

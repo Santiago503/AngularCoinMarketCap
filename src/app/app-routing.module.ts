@@ -6,6 +6,7 @@ const routes: Routes = [
     path: 'cryptos',
     loadChildren: () => import('./views/views.module').then((m) => m.ViewsModule),
   },
+  { path: '**', redirectTo: 'cryptos', pathMatch: 'full' },
 ];
 
 @NgModule({
