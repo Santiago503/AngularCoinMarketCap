@@ -1,6 +1,7 @@
 ## AngularCoinMarketCap
 Sitio Web que consume Api https://github.com/Santiago503/ApiRestCoinMarketCap, 
-para consultar precio de las crypto moneda que desees, con solo colocar los simbolos de la moneda dividido por coma.
+para consultar precio de las crypto moneda que desees, con solo colocar los simbolos de la moneda dividido por coma, Ejemplo: BTC,ETH,BNB,USDT,ADA
+
 
 
 ## Repositorios
@@ -14,7 +15,7 @@ Frond End: https://github.com/Santiago503/AngularCoinMarketCap
 - 3- Dentro de la carpeta correr el comando ng serve.
 - 4- Ejecutar el Api Rest que esta en el otro repo.
 
-- nota: Antes de empezar a usar asegurarse que el Api Rest en C# se este ejecutando.
+- nota: Antes de empezar a usar asegurarse que el Api Rest en C# se este ejecutando.: https://github.com/Santiago503/ApiRestCoinMarketCap
 
 
 ## Estructura del codigo
@@ -25,7 +26,7 @@ src/                         project source code
 |- app/                      app components
 |  |- components/            shared module  (common components)
 |  |- shared/                shared module  (common components)
-|  |- service/               folders)
+|  |- service/               folders service (request http, alert)
 |  |- models/                all models   (models)
 |  |- views/                 (components, page)
 |  |- app.component.*        app root component
