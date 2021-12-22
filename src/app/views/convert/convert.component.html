@@ -1,0 +1,29 @@
+
+
+<div class="d-flex justify-content-center flex-column">
+  <form [formGroup]="this.formGroup" autocomplete="off">
+    <div class="col-md-3 col-sm-12">
+      <label for="">Cantidad: </label>
+      <div class="input-group mb-3">
+        <input type="number" class="form-control" formControlName="amount" name="amount" placeholder="Cantidad a Convertir">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Convertir</button>
+      </div>
+    </div>
+  </form>
+
+  <h5>Convertir  {{ this.formGroup.value.amount }} {{ this.symbol | uppercase  }} a :</h5>
+
+
+  <div class="row d-flex flex-column justify-content-center" *ngIf="cryptoDataConvert.quote.length > 0">
+    <div role="button"
+      class="card m-2 col-md-3 col-sm-12 shadow-lg zoom h-100"
+      *ngFor=" let coin of cryptoDataConvert.quote">
+      <app-cards
+          [title]="coin.name"
+          [sub_title]="coin.symbol"
+          [currency]="coin?.price">
+      </app-cards>
+    </div>
+  </div>
+</div>
+
