@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { interval } from 'rxjs/internal/observable/interval';
 import { CryptoCoin, Crypto } from 'src/app/models/coin-market-cap/cryptoCoin';
 import { AlertService } from 'src/app/services/alert/alert.service';
 import { HttpRequestService } from 'src/app/services/request-http/http-request.service';
+import { FormBuilder } from '@angular/forms';
+import { HttpHeaders, HttpParams } from '@angular/common/http';
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
@@ -17,11 +19,13 @@ export class QuotesComponent implements OnInit {
   count = 0;
   interval: any;
   timeCallApi = 5;
+  isLoading = false;
   private unsubscribe$ = new Subject<void>();
   constructor(
     private reqHttp: HttpRequestService,
     private alertServ: AlertService,
-    private route: Router
+    private route: Router,
+    private fb: FormBuilder,
   ) {}
 
   ngOnInit(): void {
@@ -35,14 +39,28 @@ export class QuotesComponent implements OnInit {
   }
 
   getQuotes() {
+    const { symbol } = this.formGroup.value;
+
+    this.isLoading = true;
+
+    const options = {
+      headers: new HttpHeaders(),
+      params: new HttpParams(),
+    };
+
+    options.params = options.params.append('symbol', symbol);
+
+    this.isLoading = true;
     this.reqHttp
-      .getRequest('CoinMarketCap/quotes')
+      .getRequest('CoinMarketCap/quotes', options)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         (resp: CryptoCoin) => {
-          this.quotes = Object.values(resp.data);
+          this.isLoading = false;
+          this.quotes = Object.values(resp?.data);
         },
         (error) => {
+          this.isLoading = false;
           this.alertServ.toartError(
             'Ocurrio un Error!',
             'Ah ocurrido un error, dale click al boton de iniciar para volver intentarlo. ' +
@@ -96,4 +114,8 @@ export class QuotesComponent implements OnInit {
       `cryptos/convert/${coin.symbol.toLocaleLowerCase()}/${ParamResiduary.toLocaleLowerCase()}/1`
     );
   }
+
+  formGroup = this.fb.group({
+    symbol: ['BTC,ETH,BNB,USDT,ADA'],
+  });
 }

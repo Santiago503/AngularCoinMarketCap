@@ -1,29 +1,33 @@
 
 <h5>Convertir Crypto</h5>
 
-<div class="d-flex flex-column">
-  <form [formGroup]="this.formGroup" (keyup.enter)="Convert()" autocomplete="off">
+<div class="d-flex flex-column ">
+    <form [formGroup]="this.formGroup" (keyup.enter)="Convert()" autocomplete="off">
 
-    <app-form-control
-      [formGroup]="this.formGroup"
-      (clickConvert)="Convert()">
-    </app-form-control>
+      <app-form-control
+        [formGroup]="this.formGroup"
+        (clickConvert)="Convert()">
+      </app-form-control>
 
-  </form>
+    </form>
 
-
-  <div class="row d-flex flex-column" *ngIf="cryptoDataConvert?.quote.length > 0">
-    <div role="button" class="card m-2 col-md-3 col-sm-12 shadow-lg zoom h-100"
-      *ngFor=" let coin of cryptoDataConvert.quote">
-      <app-cards [title]="coin.name" [sub_title]="coin.symbol" [currency]="coin?.price">
-      </app-cards>
+    <div class="row d-flex flex-column " *ngIf="cryptoDataConvert?.quote.length > 0">
+      <div role="button" class="card m-2 col-md-3 col-sm-12 shadow-lg zoom h-100"
+        *ngFor=" let coin of cryptoDataConvert.quote">
+        <app-cards [title]="coin.name" [sub_title]="coin.symbol" [currency]="coin?.price">
+        </app-cards>
+      </div>
     </div>
-  </div>
 
-  <div class="col-md-3 col-sm-12 d-flex  p-5 justify-content-center">
-    <app-loading-spinner [isEnable]="!cryptoDataConvert?.quote.length || isLoading">
-    </app-loading-spinner>
-  </div>
+    <div class="col-md-3 col-sm-12 d-flex  p-5 ">
+      <app-loading-spinner [isEnable]="isLoading">
+      </app-loading-spinner>
 
-
+      <div class="col-md-12 d-flex ">
+        <app-alert
+          [isEnable]="!cryptoDataConvert?.quote.length && !isLoading "
+          [text]="'No hay datos para mostrar'">
+        </app-alert>
+      </div>
+    </div>
 </div>
